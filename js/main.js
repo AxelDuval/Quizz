@@ -21,8 +21,15 @@ function checkFunction(arrayResults) {
         else {
             checkArray.push(false);
         }
-        console.log(checkArray);
+        // console.log(checkArray);
+        showResults();
+        checkArray = [];
     }
+}
+
+function showResults(arrCheck){
+    const faultsNumber = arrCheck.filter(el => el !== true);
+    console.log(faultsNumber);
 }
 
 // *** MAIN ***
@@ -36,8 +43,10 @@ form.addEventListener("submit", (e) => {
     for(i=1; i<6; i++) {
         arrayResults.push(document.querySelector(`input[name='q${i}']:checked`).value);
     }
-    console.log(arrayResults);
     checkFunction(arrayResults);
     arrayResults = [];
 })
+
+
+
 
